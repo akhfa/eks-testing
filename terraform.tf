@@ -24,8 +24,8 @@ terraform {
   required_version = "~> 1.12.0"
 
   backend "s3" {
-    bucket         = "test-mwaa-akhfa"
-    key            = "terraform-state/testing.tfstate"
-    region         = "ap-southeast-3"
+    bucket = "test-mwaa-akhfa"
+    key    = "terraform-state/testing.tfstate"
+    region = "ap-southeast-3"
   }
 }
