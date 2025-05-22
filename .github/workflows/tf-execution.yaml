@@ -6,6 +6,9 @@ on:
   push:
     branches: [ main,feat/eks-clusters ]
 
+permissions:
+  pull-requests: write
+
 jobs:
   terraform:
     name: "Terraform"
