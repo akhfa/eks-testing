@@ -9,8 +9,6 @@ data "aws_availability_zones" "available" {
   }
 }
 
-data "aws_caller_identity" "current" {}
-
 locals {
   cluster_name = "eks-testing-${random_string.suffix.result}"
 }
@@ -92,13 +90,6 @@ module "eks" {
       min_size     = 1
       max_size     = 2
       desired_size = 1
-    }
-  }
-  access_entries = {
-    root = {
-      kubernetes_groups = ["system:masters"]
-      principal_arn     = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:root"
-      type              = "STANDARD"
     }
   }
 }
